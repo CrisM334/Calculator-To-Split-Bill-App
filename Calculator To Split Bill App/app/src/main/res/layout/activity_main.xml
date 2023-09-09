@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="Split Bill Calculator"
+            app:titleTextColor="@android:color/white"
+            app:menu="@menu/menu_main" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:fillViewport="true">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="#F4C4D5">
+
+            <TableRow>
+                <TextView
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:text="Amount:"
+                    android:textColor="#0B0101"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/tabb"
+                    android:layout_height="match_parent"
+                    android:inputType="number|numberDecimal"
+                    android:background="@null"
+                    android:padding="10dp"
+                    android:text="0.0"
+                    android:textAllCaps="false"
+                    android:textColor="#0B0101"
+                    android:textSize="25sp" />
+            </TableRow>
+
+
+            <TableRow android:layout_width="369dp">
+                <TextView
+                    android:id="@+id/percentForSlider"
+                    android:layout_width="wrap_content"
+                    android:padding="10dp"
+                    android:text="0%"
+                    android:textAlignment="textEnd"
+                    android:textColor="#0EB4C8"
+                    android:textSize="25sp" />
+
+                <SeekBar
+                    android:id="@+id/theSlider"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_span="3"
+                    android:max="100"
+                    android:progress="0"
+                    android:textColor="#0B0101" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_gravity="end"
+                    android:padding="10dp"
+                    android:text="Tip:"
+                    android:textColor="#0B0101"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tip"
+                    android:layout_width="89dp"
+                    android:padding="10dp"
+                    android:text="0.0"
+                    android:textColor="#0EB4C8"
+                    android:textSize="25sp" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_gravity="end"
+                    android:padding="10dp"
+                    android:text="Total:"
+                    android:textColor="#0B0101"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="37dp"
+                    android:padding="10dp"
+                    android:text="0.0"
+                    android:textColor="#DA0E0E"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_gravity="end"
+                    android:padding="10dp"
+                    android:text="Split:"
+                    android:textColor="#0B0101"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/theSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:entries="@array/theArray"
+                    android:padding="10dp"
+                    android:textColor="#0B0101"
+                    android:textSize="25sp" />
+            </TableRow>
+
+            <RadioGroup
+                android:id="@+id/threeButtonOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="ClickedIt"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButtonNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="ClickedIt"
+                    android:text="No"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="ClickedIt"
+                    android:text="Tip" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="ClickedIt"
+                    android:text="Total" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/totalSplit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:textSize="25sp"
+                android:textColor="#0B0101"
+                />
+
+        </TableLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+

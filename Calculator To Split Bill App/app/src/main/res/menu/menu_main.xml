@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/shareButton"
+        android:title="Share"
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_menu_share" />
+
+    <item
+        android:id="@+id/infoButton"
+        android:title="Info"
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_dialog_info" />
+</menu>
+
+
+
+
+
+
+
+
+
+
+
+
